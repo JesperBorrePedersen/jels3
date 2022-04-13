@@ -12,7 +12,7 @@ blades <- tech %>%
 
 
 
-## plotting facet wrap
+## plotting figure 7 and 8
 
 blades$site <- factor(blades$site, levels = c("Jels 3", "Jels 2", "Jels 1",
                                                                       "AHR LA 137 (Poggenwisch)", "AHR LA 139 (Hasewisch)",
@@ -32,6 +32,7 @@ levels(blades$classification) <- c("Havelte Group",
                                                "Late Pleistocene (other)",
                                                "Late Pleistocene (other)")
 
+# plotting and saving figure 7
 
 jpeg(file="3_figures/fig_7.jpeg") #setting up for saving plot as jpeg
 
@@ -52,6 +53,8 @@ fig_7
 
 dev.off() #calling off saving function
 
+
+# plotting and saving figure 8
 
 jpeg(file="3_figures/fig_8.jpeg",
      width = 900, height = 650) #setting up for saving plot as jpeg
@@ -106,6 +109,9 @@ levels(CA_2$classification) <- c("Havelte Group",
                                         "Classic Hamburgian",
                                         "Late Pleistocene (other)",
                                         "Late Pleistocene (other)")
+
+
+# plotting and saving figure 10
 
 jpeg(file="3_figures/fig_10.jpeg") #setting up for saving plot as jpeg
 
