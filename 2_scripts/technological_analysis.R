@@ -34,7 +34,7 @@ levels(blades$classification) <- c("Havelte Group",
 
 # plotting and saving figure 7
 
-jpeg(file="3_figures/fig_7.jpeg") #setting up for saving plot as jpeg
+jpeg(file="3_output/figures/fig_7.jpeg") #setting up for saving plot as jpeg
 
 
 
@@ -56,7 +56,7 @@ dev.off() #calling off saving function
 
 # plotting and saving figure 8
 
-jpeg(file="3_figures/fig_8.jpeg",
+jpeg(file="3_output/figures/fig_8.jpeg",
      width = 900, height = 650) #setting up for saving plot as jpeg
 
 
@@ -113,7 +113,7 @@ levels(CA_2$classification) <- c("Havelte Group",
 
 # plotting and saving figure 10
 
-jpeg(file="3_figures/fig_10.jpeg") #setting up for saving plot as jpeg
+jpeg(file="3_output/figures/fig_10.jpeg") #setting up for saving plot as jpeg
 
 
 fig_10 <- ggplot(data = CA_2, aes(x = Dim1, y = Dim2)) +
@@ -136,4 +136,41 @@ fig_10 <- ggplot(data = CA_2, aes(x = Dim1, y = Dim2)) +
 fig_10
 
 dev.off() #calling off saving function
+
+
+# Creating summary tables  of length and width of blade material for supplementary information
+
+sum_length <- blades %>%
+  group_by(site) %>%
+  summarize(n = n(),
+            min = round(min(length), 1),
+            max = round(max(length), 1),
+            mean = round(mean(length), 1),
+            range = round(max(length) - min(length), 1),
+            sd = round(sd(length), 1),
+            cv = round((DescTools::CoefVar((length), unbiased = TRUE)*100), 1),
+            lq = round(quantile(length, 0.25), 1),
+            uq = round(quantile(length, 0.75), 1))
+
+sum_length
+
+
+write.csv(sum_length,(here("3_output/tables/table_si_1.csv")), row.names = FALSE) #saving table
+
+
+sum_width <- blades %>%
+  group_by(site) %>%
+  summarize(n = n(),
+            min = round(min(width), 1),
+            max = round(max(width), 1),
+            mean = round(mean(width), 1),
+            range = round(max(width) - min(width), 1),
+            sd = round(sd(width), 1),
+            cv = round((DescTools::CoefVar((width), unbiased = TRUE)*100), 1),
+            lq = round(quantile(width, 0.25), 1),
+            uq = round(quantile(width, 0.75), 1))
+
+sum_width
+
+write.csv(sum_width,(here("3_output/tables/table_si_2.csv")), row.names = FALSE) #saving table
 

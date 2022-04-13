@@ -3,7 +3,8 @@
 library(tidyverse)
 library(here)
 library(raster)
-
+library(sp)
+library(maptools)
 
 # reading the data
 grid <- readr::read_csv(here("1_data/raw_data/jels3_grid.csv"))
@@ -42,9 +43,6 @@ save(Units, Border, file="1_data/derived_data/jels3Map1.RData")
 
 #choropleth map
 
-library(sp)
-library(maptools)
-
 Polys <- lapply(Units, function(x) rbind(x, x[1,]))
 Polylist <- lapply(Polys, function(x) Polygon(x, hole=FALSE))
 PolysList <- lapply(seq_along(Polylist), function(x)
@@ -73,6 +71,10 @@ tib_grid <- grid %>% mutate(Group = case_when(total_count <= 0 ~ "0",
 ## specifying the factor levels in the order you want
 tib_grid$Group <- factor(tib_grid$Group, levels = c("0", "1-10", "10-20", "20-30", "30-50", "50-70", ">200"))
 
+# plotting choropleth map
+
+jpeg(file="3_output/figures/fig_4_a.jpeg") #setting up for saving image as jpeg
+
 gcol <- gray(7:0/7)
 plot(Quads, col=gcol[as.factor(tib_grid$Group)])
 title("A)", adj = 0.1)
@@ -80,23 +82,25 @@ legend (-5, 9, levels(tib_grid$Group), fill = gcol[1:7], title= "Debitage per un
 scalebar(400, xy= c(-4.2, 0), type="bar", divs=4, below = "m", label = c(1, NA, 4),
          lonlate= NULL)
 
-
+dev.off() #calling off saving function
 
 
 
 #dot denisty map with burnt material
+
+jpeg(file="3_output/figures/fig_4_b.jpeg") #setting up for saving image as jpeg
+
 set.seed(2)
 dots <- dotsInPolys(Quads, as.integer(grid$burnt/1))
 plot(Quads, lty=0)
 title("B)", adj = 0.1)
 points(dots, pch=20, cex=.5)
 plot(boundary, add=TRUE)
-scalebar(400, xy= c(-5, 1), type="bar", divs=4, below = "m", label = c(1, NA, 4), transform = FALSE)
+
+dev.off() #calling off saving function
 
 
 ## The final combination of the two plots was done in the image editing software Gimp (https://www.gimp.org/)
-
-
 
 
 
@@ -150,5 +154,7 @@ table_2 <- subset(df2, select=c(ncol(df2),1:(ncol(df2)-1))) %>% # get "tools" co
   as_tibble()
 
 table_2
+
+write.csv(table_2,(here("3_output/tables/table_2.csv")), row.names = FALSE) #saving table
 
 # The final editing was done manually in ms word, but the figures are published as they were calculated here

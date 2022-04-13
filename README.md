@@ -64,7 +64,9 @@ The analysis was developed and carried out using R version 4.1.3 and the followi
     ├── derived_data    # new data files created during the analysis
     └── raw_data        # the raw archaeological data
 ├── 2_scripts           # The analysis script(s)
-├── 3_figures           # Figure outputs
+├── 3_output            # Visual outputs
+    ├── figures         # Figures
+    └── tables          # Tables
 ```
 
 
