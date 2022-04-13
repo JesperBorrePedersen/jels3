@@ -7,8 +7,7 @@
 
 ### Maintainer of the repository:
 
-[![ORCiD](https://img.shields.io/badge/ORCiD-0000--0002--3468--0986-green.svg)](https://orcid.org/
-0000-0002-3468-0986) Jesper Borre Pedersen (<jesper.borre@cas.au.dk>) 
+![ORCiD](https://img.shields.io/badge/ORCiD-0000--0002--3468--0986-green.svg) Jesper Borre Pedersen (<jesper.borre@cas.au.dk>) 
 
 ### How to cite
 
