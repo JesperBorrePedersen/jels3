@@ -1,4 +1,4 @@
-## Research compendium for 'Jels 3, a new Late Paleolithic open-air site in Denmark, sheds light on the pioneer colonization of northern Europe'.
+## Research compendium for 'Jels 3, a New Late Paleolithic Open-Air Site in Denmark, Sheds Light on the Pioneer Colonization of Northern Europe'.
 
 
 ### Compendium DOI:
@@ -11,7 +11,7 @@
 
 ### How to cite
 
-Pedersen, Jesper Borre, Poulsen, Martin Egelund & Felix Riede (xxxx). Jels 3, a new Late Paleolithic open-air site in Denmark, sheds light on the pioneer colonization of northern Europe.
+Pedersen, Jesper Borre, Poulsen, Martin Egelund & Felix Riede (2022). Jels 3, a New Late Paleolithic Open-Air Site in Denmark, Sheds Light on the Pioneer Colonization of Northern Europe. Journal of Field Archaeology 47(6): 360-378. https://doi.org/10.1080/00934690.2022.2086346
 
 ### Content
 
@@ -27,7 +27,7 @@ Pedersen, Jesper Borre, Poulsen, Martin Egelund & Felix Riede (xxxx). Jels 3, a 
 
 ### Description
 
-This repository contains the data, code and supplementary information for our manuscript: _Pedersen, Jesper Borre, Poulsen, Martin Egelund & Felix Riede (2022). Jels 3, a new Late Paleolithic open-air site in Denmark, sheds light on the pioneer colonization of northern Europe_. 
+This repository contains the data, code and supplementary information for our manuscript: _Pedersen, Jesper Borre, Poulsen, Martin Egelund & Felix Riede (2022). Jels 3, a New Late Paleolithic Open-Air Site in Denmark, Sheds Light on the Pioneer Colonization of Northern Europe_. 
 
 ### Abstract
 
