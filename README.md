@@ -27,7 +27,7 @@ Pedersen, Jesper Borre, Poulsen, Martin Egelund & Felix Riede (xxxx). Jels 3, a 
 
 ### Description
 
-This repository contains the data, code and supplementary information for our manuscript: _Pedersen, Jesper Borre, Poulsen, Martin Egelund & Felix Riede (xxxx). Jels 3, a new Late Paleolithic open-air site in Denmark, sheds light on the pioneer colonization of northern Europe_. 
+This repository contains the data, code and supplementary information for our manuscript: _Pedersen, Jesper Borre, Poulsen, Martin Egelund & Felix Riede (2022). Jels 3, a new Late Paleolithic open-air site in Denmark, sheds light on the pioneer colonization of northern Europe_. 
 
 ### Abstract
 
